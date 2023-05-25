@@ -36,6 +36,14 @@
 
 extern char **environ;
 
+/* Global environemnt */
+extern char **envn;
+/* Global program name */
+char *name;
+/* Global history counter */
+int hist;
+
+
 /**
  * struct liststr - singly linked list
  * @num: the number field
@@ -48,6 +56,36 @@ typedef struct liststr
 	char *str;
 	struct liststr *next;
 } list_t;
+
+
+/**
+ * struct builtin_s - A new struct type defining builtin commands.
+ * @name: Name of the builtin command.
+ * @f: A function pointer to the builtin command's function.
+ */
+typedef struct builtin_s
+{
+	char *name;
+	int (*f)(char **argv, char **commandLine);
+} builtin_t;
+
+
+/**
+ * struct alias_s - A new struct defining aliases.
+ * @name: The name of the alias.
+ * @value: The value of the alias.
+ * @next: A pointer to another struct alias_s.
+ */
+typedef struct alias_s
+{
+	char *name;
+	char *value;
+	struct alias_s *next;
+} alias_t;
+
+/* Global aliases linked list */
+alias_t *aliases;
+
 
 /**
  * struct passinfo - it contains pseudo-arguements to pass into a function,
@@ -101,5 +139,23 @@ int interactive(info_c *);
 int is_delimeter(char, char *);
 int _isalphabet(int);
 int _strn(char *);
+
+
+/* Builtins */
+int (*get_builtin(char *command))(char **args, char **cmdline);
+int shell_help(char **args, char __attribute__((__unused__)) **cmdline);
+int shell_exit(char **args, char **cmdline);
+int shell_env(char **args, char __attribute__((__unused__)) **cmdline);
+int shell_setenv(char **args, char __attribute__((__unused__)) **cmdline);
+int shell_unsetenv(char **args, char __attribute__((__unused__)) **cmdline);
+int shell_cd(char **args, char __attribute__((__unused__)) **cmdline);
+int shell_alias(char **args, char __attribute__((__unused__)) **cmdline);
+
+
+/* Builtin Helpers */
+char **env_copy(void);
+void free_env(void);
+char **env_get(const char *var);
+
 
 #endif
