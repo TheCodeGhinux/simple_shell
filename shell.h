@@ -34,6 +34,9 @@
 #define HIST_FILE	".simple_shell_history"
 #define HIST_MAX	4096
 
+#define END_OF_FILE -2
+#define EXIT -3
+
 extern char **environ;
 
 /* Global environemnt */
@@ -182,7 +185,7 @@ int shell_exit(char **args, char **cmdline);
 int shell_env(char **args, char __attribute__((__unused__)) **cmdline);
 int shell_setenv(char **args, char __attribute__((__unused__)) **cmdline);
 int shell_unsetenv(char **args, char __attribute__((__unused__)) **cmdline);
-int shell_cd(char **args, char __attribute__((__unused__)) **cmdline);
+int _mycd(info_c *);
 int shell_alias(char **args, char __attribute__((__unused__)) **cmdline);
 
 
