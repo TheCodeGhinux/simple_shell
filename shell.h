@@ -140,6 +140,17 @@ int is_delimeter(char, char *);
 int _isalphabet(int);
 int _strn(char *);
 
+/* Input Helpers */
+void handle_line(char **line, ssize_t read);
+void variable_replacement(char **args, int *exe_ret);
+char *get_args(char *line, int *exe_ret);
+int call_args(char **args, char **front, int *exe_ret);
+int run_args(char **args, char **front, int *exe_ret);
+int handle_args(int *exe_ret);
+int check_args(char **args);
+void free_args(char **args, char **front);
+char **replace_aliases(char **args);
+
 
 /* String functions */
 int _strlen(const char *s);
