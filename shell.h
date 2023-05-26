@@ -89,6 +89,17 @@ typedef struct alias_s
 /* Global aliases linked list */
 alias_t *aliases;
 
+/**
+ * struct list_s - A new struct type defining a linked list.
+ * @dir: A directory path.
+ * @next: A pointer to another struct list_s.
+ */
+typedef struct list_s
+{
+	char *dir;
+	struct list_s *next;
+} list_t;
+
 
 /**
  * struct passinfo - it contains pseudo-arguements to pass into a function,
