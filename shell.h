@@ -168,12 +168,12 @@ char **replace_aliases(char **args);
 
 
 /* String functions */
-int _strlen(const char *s);
-char *_strcat(char *dest, const char *src);
-char *_strncat(char *dest, const char *src, size_t n);
-char *_strcpy(char *dest, const char *src);
-char *_strchr(char *s, char c);
-int _strspn(char *s, char *accept);
+int _strlen(const char *l);
+char *_strcat(char *dest, const char *sc);
+char *_strncat(char *dest, const char *sc, size_t n);
+char *_strcpy(char *dest, const char *sc);
+char *_strchr(char *l, char a);
+int _strspn(char *l, char *y);
 int _strcmp(char *s1, char *s2);
 int _strncmp(const char *s1, const char *s2, size_t n);
 
@@ -219,6 +219,16 @@ void help_env(void);
 void help_setenv(void);
 void help_unsetenv(void);
 void help_history(void);
+
+/* Error Handling */
+int create_error(char **args, int err);
+char *err_env(char **args);
+char *err_1(char **args);
+char *err_2_exit(char **args);
+char *err_2_cd(char **args);
+char *err_2_syntax(char **args);
+char *err_126(char **args);
+char *err_127(char **args);
 
 int proc_file_commands(char *file_path, int *exe_ret);
 #endif
