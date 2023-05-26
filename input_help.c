@@ -23,7 +23,7 @@ char *get_args(char *line, int *exe_ret)
 	if (line)
 		free(line);
 
-	rd = get_line(&line, &k, STDIN_FILENO);
+	rd = _getline(&line, &k, STDIN_FILENO);
 	if (rd == -1)
 		return (NULL);
 	if (rd == 1)
