@@ -36,7 +36,7 @@ char *get_args(char *line, int *exe_ret)
 
 	line[rd - 1] = '\0';
 	variable_replacement(&line, exe_ret);
-	handle_line(&line, rd);
+	line_ptr(&line, rd);
 
 	return (line);
 }
