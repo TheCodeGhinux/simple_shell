@@ -2,7 +2,7 @@
 
 char **env_copy(void);
 void free_env(void);
-char **env_get(const char *var);
+char **_getenv(const char *var);
 
 /**
  * env_copy - To create a copy of the environment.
