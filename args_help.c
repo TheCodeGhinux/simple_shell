@@ -57,44 +57,6 @@ char *get_pid(void)
 }
 
 /**
- * get_env_value - Gets the value corresponding to an environmental variable.
- * @beginning: The environmental variable to search for.
- * @len: The length of the environmental variable to search for.
- *
- * Return: If the variable is not found - an empty string.
- *         Otherwise - the value of the environmental variable.
- *
- * Description: Variables are stored in VARIABLE=VALUE format.
- */
-char *get_env_value(char *beginning, int len)
-{
-	char **var_add;
-	char *replacement = NULL, *tmp, *var;
-
-	var = malloc(len + 1);
-	if (!var)
-		return (NULL);
-	var[0] = '\0';
-	_strncat(var, beginning, len);
-
-	char *var_add = NULL;
-	var_add = getenv(var);
-	free(var);
-	if (var_add)
-	{
-		tmp = *var_add;
-		while (*tmp != '=')
-			tmp++;
-		tmp++;
-		replacement = malloc(_strlen(tmp) + 1);
-		if (replacement)
-			_strcpy(replacement, tmp);
-	}
-
-	return (replacement);
-}
-
-/**
  * variable_replacement - Handles variable replacement.
  * @line: A double pointer containing the command and arguments.
  * @exe_ret: A pointer to the return value of the last executed command.
