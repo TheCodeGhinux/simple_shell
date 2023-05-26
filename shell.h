@@ -230,5 +230,11 @@ char *err_2_syntax(char **args);
 char *err_126(char **args);
 char *err_127(char **args);
 
+/* Linkedlist Helpers */
+alias_t *add_alias_end(alias_t **head, char *name, char *value);
+void free_alias_list(alias_t *head);
+list_t *add_node_end(list_t **head, char *dir);
+void free_list(list_t *head);
+
 int proc_file_commands(char *file_path, int *exe_ret);
 #endif
