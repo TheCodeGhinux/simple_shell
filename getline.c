@@ -2,7 +2,7 @@
 
 void *re_alloc(void *prev, unsigned int old_size, unsigned int new_size);
 void assign_lineprev(char **lineprev, size_t *n, char *buffer, size_t b);
-ssize_t get_line(char **lineprev, size_t *n, FILE *stream);
+ssize_t _getline(char **lineprev, size_t *n, FILE *stream);
 
 /**
  * re_alloc - Reallocates a memory block using malloc and free.
@@ -56,7 +56,7 @@ void *re_alloc(void *prev, unsigned int old_size, unsigned int new_size)
 }
 
 /**
- * assign_lineprev - Reassigns the lineprev variable for get_line.
+ * assign_lineprev - Reassigns the lineprev variable for _getline.
  * @lineprev: A buffer to store an input string.
  * @n: The size of lineprev.
  * @buffer: The string to assign to lineprev.
@@ -88,14 +88,14 @@ void assign_lineprev(char **lineprev, size_t *n, char *buffer, size_t b)
 }
 
 /**
- * get_line - Reads input from a stream.
+ * _getline - Reads input from a stream.
  * @lineprev: A buffer to store the input.
  * @n: The size of lineprev.
  * @stream: The stream to read from.
  *
  * Return: The number of bytes read.
  */
-ssize_t get_line(char **lineprev, size_t *n, FILE *stream)
+ssize_t _getline(char **lineprev, size_t *n, FILE *stream)
 {
 	static ssize_t input;
 	ssize_t ret;
