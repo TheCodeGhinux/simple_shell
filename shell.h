@@ -48,20 +48,6 @@ int hist;
 
 
 /**
- * struct liststr - singly linked list
- * @num: the number field
- * @str: a string
- * @next: points to the next node
- */
-typedef struct liststr
-{
-	int num;
-	char *str;
-	struct liststr *next;
-} list_t;
-
-
-/**
  * struct builtin_s - A new struct type defining builtin commands.
  * @name: Name of the builtin command.
  * @f: A function pointer to the builtin command's function.
@@ -91,11 +77,15 @@ alias_t *aliases;
 
 /**
  * struct list_s - A new struct type defining a linked list.
+ * @num: the number field
+ * @str: a string
  * @dir: A directory path.
  * @next: A pointer to another struct list_s.
  */
 typedef struct list_s
 {
+	int num;
+	char *str;
 	char *dir;
 	struct list_s *next;
 } list_t;
