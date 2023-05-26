@@ -7,8 +7,9 @@ char *_strncat(char *dest, const char *sc, size_t n);
 
 /**
  * _strlen - To return the length of a string.
- * @s: A pointer to the characters string.
+ * @l: A pointer to the characters string.
  *
+ * Description: To return length of str
  * Return: The length of the character.
  */
 int _strlen(const char *l)
@@ -23,7 +24,7 @@ int _strlen(const char *l)
 }
 
 /**
- * _strcpy - Copies the string pointed to sc 
+ * _strcpy - Copies the string pointed to sc
  *           to the buffer pointed by des.
  * @dest: Pointer to the destination of copied string.
  * @sc: Pointer to the sc of the source string.
