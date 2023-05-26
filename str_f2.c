@@ -17,7 +17,7 @@ char *_strchr(char *l, char a)
 {
 	int c;
 
-	for (c = 0;ls[c]; c++)
+	for (c = 0;l[c]; c++)
 	{
 		if (l[c] == a)
 			return (l + c);
@@ -91,7 +91,7 @@ int _strncmp(const char *s1, const char *s2, size_t n)
 {
 	size_t j;
 
-	for (j = 0; s1[j] && s2[j] && i < n; j++)
+	for (j = 0; s1[j] && s2[j] && j < n; j++)
 	{
 		if (s1[j] > s2[j])
 			return (s1[j] - s2[j]);
