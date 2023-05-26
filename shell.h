@@ -238,5 +238,5 @@ void free_alias_list(alias_t *head);
 list_t *add_node_end(list_t **head, char *dir);
 void free_list(list_t *head);
 
-int proc_file_commands(char *file_path, int *exe_ret);
+int proc_comm(char *file_path, int *exe_ret);
 #endif
