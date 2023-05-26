@@ -7,8 +7,8 @@ int _strncmp(const char *s1, const char *s2, size_t n);
 
 /**
  * _strchr - Locates a character in a string.
- * @s: The string to be searched.
- * @c: The character to be located.
+ * @l: The string to be searched.
+ * @a: The character to be located.
  *
  * Return: If a is found - a pointer to the first occurence.
  *         If a is not found - NULL.
@@ -17,7 +17,7 @@ char *_strchr(char *l, char a)
 {
 	int c;
 
-	for (c = 0;l[c]; c++)
+	for (c = 0; l[c]; c++)
 	{
 		if (l[c] == a)
 			return (l + c);
@@ -28,7 +28,7 @@ char *_strchr(char *l, char a)
 
 /**
  * _strspn - Gets the length of a prefix substring.
- * @s: The string to be searched.
+ * @l: The string to be searched.
  * @y: The prefix to be measured.
  *
  * Return: The number of bytes in s which
