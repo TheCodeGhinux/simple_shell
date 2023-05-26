@@ -146,7 +146,7 @@ int _strn(char *);
 
 
 /* Main Helpers */
-ssize_t get_line(char **lineprev, size_t *n, FILE *stream);
+ssize_t _getline(char **lineprev, size_t *n, FILE *stream);
 void *re_alloc(void *prev, unsigned int old_size, unsigned int new_size);
 char **_strtok(char *line, char *delim);
 char *get_loc(char *command);
