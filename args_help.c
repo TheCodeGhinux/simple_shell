@@ -2,7 +2,6 @@
 
 void free_args(char **args, char **cmdline);
 char *get_pid(void);
-char *get_env_value(char *beginning, int len);
 void var_replacement(char **args, int *exe_ret);
 
 /**
