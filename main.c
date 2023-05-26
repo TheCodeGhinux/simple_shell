@@ -33,7 +33,7 @@ int execute(char **args, char **front)
 	if (command[0] != '/' && command[0] != '.')
 	{
 		flag = 1;
-		command = get_location(command);
+		command = get_loc(command);
 	}
 
 	if (!command || (access(command, F_OK) == -1))
